@@ -19,7 +19,7 @@ export default {
   methods: {
    async sendAjax () {
     //  https://cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312
-     const rest = await  this.$http.get('http://www.hoge.cn/m2o/pub/pub.php?column_id=56&count=8&offset=0')
+     const rest = await  this.$http.get('http://www.hletong.com/web/public/hletong/contents/alllist')
      console.log(rest)
     }
   }

@@ -34,7 +34,6 @@ export default {
     document.getElementById('p').nextSibling.nextElementSibling.style.color = 'red'
    console.log(document.getElementById('p').previousSibling)
   },
- 
   methods:{
     ...mapMutations(['RESET_STATE','check']),
     ...mapActions(['check']),
