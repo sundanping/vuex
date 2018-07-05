@@ -8,6 +8,7 @@
 
 <script>
 import child from './components/child'
+import http from './api'
 export default {
   name: 'App',
   components:{
@@ -18,8 +19,9 @@ export default {
   },
   methods: {
    async sendAjax () {
+     console.log(http)
     //  https://cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312
-     const rest = await  this.$http.get('http://www.hletong.com/web/public/hletong/contents/alllist')
+     const rest = await http.get('http://www.hletong.com/web/public/hletong/contents/alllist')
      console.log(rest)
     }
   }

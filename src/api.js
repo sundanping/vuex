@@ -1,18 +1,18 @@
 import axios from 'axios';
 // import Message from '@/components/message';
 
-// import { baseURL } from '../config/env';
-
+// import { baseURL } from './../config/env';
+const baseURL = ''
 const http = axios.create({
-  baseURL,
-  showErrorMessage: true
+  baseURL
+  // showErrorMessage: true
 });
 
 http.interceptors.response.use((response) => {
   const { error_code: code, error_message: message } = response.data;
   if (code) {
     const { showErrorMessage } = response.config;
-    if (showErrorMessage) Message.error(message);
+    // if (showErrorMessage) Message.error(message);
     const err = new Error(message);
     err.code = code;
     return Promise.reject(err);
