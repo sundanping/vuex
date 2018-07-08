@@ -5,7 +5,7 @@
     {{check}} ----此处会报错  用checks方法
     <h2>{{checks}}</h2>
     <p id='p'>{{userinfo.a}}</p>
-    <p>getters===》 {{group}}</p>
+    <p>getters===> {{group}}</p>
     <button @click="add">ADD</button>
     <button @click="less">LESS</button>
     <router-link to="message">TOMESSAHE</router-link>
