@@ -8,6 +8,7 @@
     <p>getters===》 {{group}}</p>
     <button @click="add">ADD</button>
     <button @click="less">LESS</button>
+    <router-link to="message">TOMESSAHE</router-link>
   </div>
 </template>
 
@@ -30,7 +31,7 @@ export default {
   },
   mounted() {
     // this.aaa = this.checks
-    //document.getElementById('p').parentElement.style.background = 'red'    
+    //document.getElementById('p').parentElement.style.background = 'red'
     document.getElementById('p').nextSibling.nextElementSibling.style.color = 'red'
    console.log(document.getElementById('p').previousSibling)
   },

@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
-    <router-view/>
-    <child></child>
+    <!--out-in 先出後進  -->
+    <transition name="fade" mode="out-in" duration="300  ">
+      <router-view/>
+
+    </transition>
+    <!--<child></child>-->
   </div>
 </template>
 
@@ -13,14 +17,21 @@ export default {
   components:{
     child
   },
+  data() {
+      return {
+        transitionName: 'slide-left'
+      }
+  },
   mounted() {
    this.sendAjax()
   },
   methods: {
-   async sendAjax () {
-    //  https://cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312
-     const rest = await  this.$http.get('http://www.hletong.com/web/public/hletong/contents/alllist')
-     console.log(rest)
+  },
+  watch: {
+    '$route' (to, from) {
+      const toDepth = to.path.split('/').length
+      const fromDepth = from.path.split('/').length
+      this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
     }
   }
 }
@@ -34,5 +45,27 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+  transform: translate(-100%,  200px) scale(1.3);
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translate(0,  0) scale(1);
+}
+  .router-link-active{
+    color:red;
+  }
+
+.slide-left-enter, .slide-right-leave-active {
+  opacity: 0;
+  -webkit-transform: translate(30px, 0);
+  transform: translate(30px, 0);
+}
+.slide-left-leave-active, .slide-right-enter {
+  opacity: 0;
+  -webkit-transform: translate(-30px, 0);
+  transform: translate(-30px, 0);
 }
 </style>
