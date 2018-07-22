@@ -25,7 +25,7 @@ export default {
   computed: {
     ...mapGetters(['group']),
     ...mapState(['token','userinfo','check']),
-    checks () {
+    checks () { //有commit 事件在mapState 的获取值或报错
       return this.$store.state.check
     }
   },
