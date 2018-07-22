@@ -44,7 +44,7 @@ export default {
       this.RESET_STATE(44);
     },
     less() {
-      this.$store.dispatch('check');
+      this.$store.dispatch('check'，{num:'传值'});// 传值
     }
   }
 }
