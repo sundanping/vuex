@@ -15,7 +15,7 @@ export default (initialState = {}) => ({
     currentLocation: '',
     newMsg: null,
     giftInfo: {},
-    channelList: [], // 当前时间频率列表
+    channelList: [], // 当前时间频率列表LIST
     currentChannel: {}, // 当前频率
     currentProgram: {},
     currentTopic: {}, // 当前显示话题
@@ -31,4 +31,3 @@ export default (initialState = {}) => ({
     backTopRight: 0, // 回到顶部按钮右侧偏移
     ...initialState
   });
-  
