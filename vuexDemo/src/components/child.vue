@@ -1,7 +1,7 @@
 <template>
     <div>
         <p>child-token:{{token}}</p>
-        <p>child-check:{{check}}</p>
+        <p>child-check:{{check}}哈哈哈</p>
     </div>
 </template>
 <script>
