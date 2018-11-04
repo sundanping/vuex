@@ -30,7 +30,7 @@
                                 background-color:red;
                                 transitiom:all 2s;
                                 transfrom:scale(.3)`
-            console.log(clone)
+            console.log(clone,1233433333)
           let {top:sourceTop,left:sourceLeft} =this.$refs.list.getBoundingClientRect()
           let resultTop = sourceTop -top
           let resultLeft = sourceLeft -left

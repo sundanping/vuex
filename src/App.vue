@@ -12,6 +12,7 @@
 
 <script>
 import child from './components/child'
+import http from './api'
 export default {
   name: 'App',
   components:{
@@ -26,12 +27,20 @@ export default {
 //   this.sendAjax()
   },
   methods: {
+<<<<<<< HEAD:vuexDemo/src/App.vue
   },
   watch: {
     '$route' (to, from) {
       const toDepth = to.path.split('/').length
       const fromDepth = from.path.split('/').length
       this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+=======
+   async sendAjax () {
+     console.log(http)
+    //  https://cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312
+     const rest = await http.get('http://www.hletong.com/web/public/hletong/contents/alllist')
+     console.log(rest)
+>>>>>>> new-branch:src/App.vue
     }
   }
 }
